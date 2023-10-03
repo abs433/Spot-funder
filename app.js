@@ -1,10 +1,29 @@
-// var myName = :"My Name is Abu Bakar" ;
-var myName = "my name is Abu Bakar"
+var myName = "my name is abu bakar"
 
 
 
-alert("Please enter a valid password");
-alert("Wellcome to JS land... ");
- alert("Happy Codding");
-alert("Hello... I can run JS through my web browser's console");
-alert("My name is abu bakar");
+var age = "24";
+
+ alert(age);
+
+var course = "web $ mobile app";
+
+alert(course);
+
+var email = "My email adress is  abubakarabs433@gmail.com";
+
+alert(email);
+
+var thanx = "smarter way to learn JavaScript";
+
+alert(thanx);
+
+var style = "▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬";
+
+alert(style);
+
+// var x = prompt("Where does the / Pope live?");
+//  if (x === "Vatican") {
+//      alert("Correct!");
+    
+// }
