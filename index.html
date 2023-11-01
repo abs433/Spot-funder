@@ -1,15 +1,434 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>h1{font-size: 200px}</style>
+    <title>Spot Finder</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Lateef:wght@500;800&family=Poppins:wght@500&display=swap"
+            rel="stylesheet">
 </head>
+
 <body>
-    <h1>cco-2625048</h1>
 
-<script src="./app.js"></script>
+<!-- nav bar -->
 
+<nav class="navbar navbar-expand-lg fixed" style="background-color: white;top: 0; width: 100%; position: fixed; z-index: 1000; border-bottom: 1px solid gray;">
+    <div class="container pt-3">
+        <!-- <div class="container"> -->
+                <a class="navbar-brand "  href="#"><img src="./img/logo.png" style="width: 170px;" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 g-8">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Become a Partner</a>
+                        </li>
+                        
+                    </ul>
+                    <form class="d-flex">
+                        <i class="fa-regular fa-lock"></i>
+                        <i class="fa-solid fa-lock me-5" ></i>
+                        <span class="pt-2 nav-item " style="cursor: pointer;"><a href="">Login</a> </span>
+                        <button class="btn btn-success nav-item " style="margin: 0px 20px ; cursor: pointer; background-color: #E23744; border-radius: 30px; border: none;" type="submit">Register</button>
+                    </form>
+                </div>
+        </div>
+    </div>
+</nav>  
+
+<div class="container main" style=" margin-top: 150px;" >
+    <div style="padding: 0px 34px; background-color: rgb(245,250,255); ">
+        <div class="col-6" style="float: left; padding: 12px; margin-right: ;"> 
+            <div >
+                <h1 style="font-size: 48px;">Parking <span style="color:#E23744;">Simplified</span></h1>
+                <p class="nav-item" style="margin-bottom: 5px;">Easily Find a Parking Space now!</p>
+            </div>
+            <div class="row" style="display: flex; flex-direction: row;">
+                
+                    <form class="search">
+                        <div class="input-group" style="margin-top: 20px; width: 100%; height: 70px;">
+                            <span class="input-group-text" id="basic-addon1"
+                                style="background-color: white; border-right: none;border-radius: 5px 0px 0px 5px; border: 2px solid  #E23744; padding: 15px; border-right:none ; margin-right: 0px;"><i
+                                    class="fa-solid fa-location-dot red"></i></span>
+                            <input type="text" class="form-control" placeholder="Your Location" aria-label="Username"
+                                aria-describedby="basic-addon1"
+                                style="padding:; border: 2px solid #E23744; border-radius:0px 5px 5px 0px; border-left:none ; margin-left: 0px">
+                        </div>
+
+                        <div class="input-group" style="margin-top: 20px; width: 100%; height: 60px;">
+                            <span class="input-group-text" id="basic-addon1"
+                                style="background-color: white; border-right: none;border-radius: 5px 0px 0px 5px; border: 2px solid  #E23744;  border-right:none ; margin-right: 0px;">
+                                   
+                                <i class="fa-solid fa-car red"></i>
+                            </span>
+                            <input type="text" class="form-control" placeholder="Select Vehicle Category" aria-label="Username"
+                                aria-describedby="basic-addon1"
+                                style="padding:; border: 2px solid #E23744; border-radius:0px 5px 5px 0px; border-left:none ; margin-left: 0px">
+                        </div>
+                        <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                                <div class="input-group" style="margin-top: 20px; width: 49%; ">
+                                <span class="input-group-text p-0" id="basic-addon1"
+                                    style="background-color: white; border-right: none;border-radius: 5px 0px 0px 5px; border: 2px solid  #E23744;  border-right:none ; margin-right: 0px;">
+                                    <img src="./img/chek in.png" style="width: 40px ; position: relative;" alt="">
+                                    <!-- <i class="fa-solid fa-car red"></i> -->
+                                </span>
+                                    <input type="text" class="form-control" placeholder="Check-in "   aria-label="Username"
+                                        aria-describedby="basic-addon1"
+                                        style="padding:; border: 2px solid #E23744;color: #E23744; border-radius:0px 5px 5px 0px; border-left:none ; margin-left: 0px">
+                                </div>
+
+                                <div class="input-group" style="margin-top: 20px; width: 49%; height: 60px;">
+                                <span class="input-group-text p-0" id="basic-addon1"
+                                    style="background-color: white; border-right: none;border-radius: 5px 0px 0px 5px; border: 2px solid  #E23744;  border-right:none ; margin-right: 0px;">
+                                    <img src="./img/chek out.png" style="width: 40px ; position: relative;" alt="">
+                                    <!-- <i class="fa-solid fa-car red"></i> -->
+                                </span>
+                                    <input type="text" class="form-control" placeholder="Check-Out" aria-label="Username"
+                                        aria-describedby="basic-addon1" style="padding:; border: 2px solid #E23744; border-radius:0px 5px 5px 0px; border-left:none ; margin-left: 0px">
+                                </div>
+
+                                
+                        </div>
+
+                             <button class="btn btn-success nav-item "
+                                style="margin-top:40px ; cursor: pointer;width: 324px;padding: 20px 10px;  background-color: #E23744; border-radius: 30px; border: none;"
+                                type="submit">Search Parking Spaces</button>
+
+                    </form>
+               
+            </div>
+        </div>
+        <div class="col-6" style="float: right; padding-top:40px ;">
+        <img src="./img/screen1.648aee58f5669afbb362.png" alt="" style="width: 100%; position: relative;"></div>
+       
+    </div>
+
+</div>
+
+<div class="container">
+    <div class="pay">
+        <h1 style="font-size: 48px;">We are everywhere!</h1>
+        <h6 style="font-size: 24px; margin: 20px 0px;">Find a new home for your car.</h6>
+        <section class="  col-12 " style="gap: 10px; display: flex; flex-direction: row; position: relative; justify-items: center;justify-content: space-between; " >
+          
+            <div class="card-itm" style="border-radius: 10px ; border: 1px solid gray; text-align: center;width: 30.33%;">
+                <img class="card-img" src="./img/1.jpg" style="width: 100%; position: relative;" alt="">
+                <div class="card-body">
+                    <h2>City Parking</h2>
+                    <button class="btn btn-success nav-item "
+                        style="margin: 24px 0px 0px ;padding: 16px 24px; cursor: pointer; background-color: #E23744; border-radius: 30px; border: none;"
+                        type="submit">Find a parking</button>
+                
+                </div>
+            </div>
+
+            <div class="card-itm" style="border-radius: 10px ; border: 1px solid gray; text-align: center;width: 30.33%;">
+                <img class="card-img" src="./img/2.jpg" style="width: 100%; position: relative;" alt="">
+                <div class="card-body">
+                    <h2>Semi Truck Parking</h2>
+                    <button class="btn btn-success nav-item "
+                        style="margin: 24px 0px 0px ;padding: 16px 24px; cursor: pointer; background-color: #E23744; border-radius: 30px; border: none;"
+                        type="submit">Find a parking</button>
+            
+                </div>
+            </div>
+
+            <div class="card-itm" style="border-radius: 10px ;border: 1px solid gray; text-align: center;width: 30.33%;">
+                <img class="card-img" src="./img/3.jpg" style="width: 100%; position: relative;" alt="">
+                <div class="card-body">
+                    <h2>Airport Parking</h2>
+                    <button class="btn btn-success nav-item "
+                        style="margin: 24px 0px 0px ;padding: 16px 24px; cursor: pointer; background-color: #E23744; border-radius: 30px; border: none;"
+                        type="submit">Find a parking</button>
+            
+                </div>
+            </div>
+
+          
+        </section>
+    
+    </div>
+
+
+    <div style="background-color: #E23744; border-radius: 10px; padding: 40px 16px; margin-top: 40px; text-align: center; color: white;">
+            <h1 style="font-size: 48px; margin: 20px 0px;">Why Spot Finder?</h1>
+            <h6 style="margin: 0px 145; font-size: 20px;">We understand the pain for finding the right spot where your car feels home. <br> Handicap friendly spots, diligent customer
+            support, we aim to comfort you with <br> nearest parking spot!</h6>
+
+            <section class="  col-12 "
+                style="gap: 10px; display: flex; flex-direction: row; position: relative; justify-items: center;justify-content: space-between; ">
+            
+                <div class="card-itm" style="border-radius: 10px ; border-radius: 10px; text-align: center;width: 30.33%;">
+                    <span style="display: flex;justify-content: center; background-color: white; border-radius: 10px  10px 0px 0px;">
+                    <img class="card-img " style="width: 144px; height: 144px; border-radius: 10px  10px 0px 0px;" src="./img/4.jpg"  alt="">
+                    </span>
+                    <div class="card-body" style="border-radius: 0px  0px 10px 10px;">
+                        <h6>City Parking</h6>
+                        <p style="margin-top:20px; font-size: 16px;">Our new app makes finding spots in not more than 3 steps. We're building the largest network of parking spots!</p>
+                       
+                    </div>
+                </div>
+            
+            <div class="card-itm" style="border-radius: 10px ; border-radius: 10px; text-align: center;width: 30.33%;">
+                <span style="display: flex;justify-content: center; background-color: white; border-radius: 10px  10px 0px 0px;">
+                    <img class="card-img " style="width: 144px; height: 144px; border-radius: 10px  10px 0px 0px;" src="./img/5.jpg" alt="">
+                </span>
+                <div class="card-body" style="border-radius: 0px  0px 10px 10px;">
+                    <h6>It's easy</h6>
+                    <p style="margin-top:20px; font-size: 16px;">We aim to keep you hooked to our services with an experience excellence team!</p>
+            
+                </div>
+            </div>
+            
+            <div class="card-itm" style="border-radius: 10px ; border-radius: 10px; text-align: center;width: 30.33%;">
+                <span style="display: flex;justify-content: center; background-color: white; border-radius: 10px  10px 0px 0px;">
+                    <img class="card-img " style="width: 144px; height: 144px; border-radius: 10px  10px 0px 0px;" src="./img/6.jpg" alt="">
+                </span>
+                <div class="card-body" style="border-radius: 0px  0px 10px 10px;">
+                    <h6>It's affordable</h6>
+                    <p style="margin-top:20px; font-size: 16px;">Find affordable spots and spend your days stress-free while your car is parked with us.</p>
+            
+                </div>
+            </div>
+            
+            
+            </section>
+    </div>
+
+    <div class="pay">
+        <h1 style="font-size: 48px; margin: 20px 0px;">Airport Parking</h1>
+        
+        <section class="  col-12 "
+            style="gap: 10px; display: flex; flex-direction: row; position: relative; justify-items: center;justify-content: space-between; ">
+    
+            <div class="card-itm" style="border-radius: 10px ; border: 1px solid gray; text-align: center;width: 25%;">
+                <img class="card-img" src="./img/7.jpg" style="width: 100%; position: relative; border-radius: 10px  10px 0px 0px;" alt="">
+                <div class="card-body">
+                    <h2 style="white-space: nowrap; overflow: hidden;">Days Inn Fort Lauderdale Airport Cruise Port</h2>
+                    <p style="white-space: nowrap; overflow: hidden;">Days Inn by Wyndham hotel is a top-ra</p>
+                    <button class="btn btn-success nav-item "
+                        style="margin: 24px 0px 0px ;padding: 16px 24px; cursor: pointer; background-color: #E23744; border-radius: 30px; border: none;"
+                        type="submit">Book Now</button>
+    
+                </div>
+            </div>
+    
+            <div class="card-itm" style="border-radius: 10px ; border: 1px solid gray; text-align: center;width: 25%;">
+                <img class="card-img" src="./img/8.jpg" style="width: 100%; position: relative;border-radius: 10px  10px 0px 0px;" alt="">
+                <div class="card-body">
+                    <h2 style="white-space: nowrap; overflow: hidden;">Days Inn Orlando Downtown</h2>
+                    <p>Da</p>
+                    <button class="btn btn-success nav-item "
+                        style="margin: 24px 0px 0px ;padding: 16px 24px; cursor: pointer; background-color: #E23744; border-radius: 30px; border: none;"
+                        type="submit">Book Now</button>
+    
+                </div>
+            </div>
+    
+            <div class="card-itm" style="border-radius: 10px ;border: 1px solid gray; text-align: center;width: 25%;">
+                <img class="card-img" src="./img/9.png" style="width: 100%; position: relative; border-radius: 10px  10px 0px 0px;" alt="">
+                <div class="card-body">
+                    <h2 style="white-space: nowrap; overflow: hidden;">Home 2 Suites Fort Lauderdale Airport</h2>
+                    <p>Th</p>
+                    <button class="btn btn-success nav-item "
+                        style="margin: 24px 0px 0px ;padding: 16px 24px; cursor: pointer; background-color: #E23744; border-radius: 30px; border: none;"
+                        type="submit">Book Now</button>
+    
+                </div>
+            </div>
+    
+
+            <div class="card-itm" style="border-radius: 10px ;border: 1px solid gray; text-align: center;width: 25%;">
+                <img class="card-img" src="./img/10.jpg" style="width: 100%; position: relative; border-radius: 10px  10px 0px 0px;" alt="">
+                <div class="card-body">
+                    <h2 style="white-space: nowrap; overflow: hidden;">Holiday Inn Express & Suites Hialeah</h2>
+                    <p>Holdiay Inn Express & Suites loca</p>
+                    <button class="btn btn-success nav-item "
+                        style="margin: 24px 0px 0px ;padding: 16px 24px; cursor: pointer; background-color: #E23744; border-radius: 30px; border: none;"
+                        type="submit">Book Now</button>
+            
+                </div>
+            </div>
+    
+        </section>
+    
+    </div>
+
+    <!-- swiper -->
+
+    <div class="swiper" style="opacity: 0.4;">
+        <div style="display: flex; flex-direction: row; ;">
+            <div class="admn" >
+            <i class="fa-solid fa-user"></i>
+            </div>
+            <div style="margin-left: 20px;">
+                <h6 >Anonymous</h6>
+                <span><i class="fa-solid fa-star"></i></span>
+                <span><i class="fa-solid fa-star"></i></span>
+                <span><i class="fa-solid fa-star"></i></span>
+                <span><i class="fa-solid fa-star"></i></span>
+                <span><i class="fa-solid fa-star"></i></span>
+            </div>
+        </div>
+        <div style="margin-top: 20px;">
+            <p>We loved using SpotFinder. It was easy and simple for us. <br>
+                 I am 80 years old and we liked how easy it was to do a <br>
+            booking.</p>.
+            <a href="#"><h6>Read more >>></h6></a>
+            
+        </div>
+    </div>
+
+
+
+
+    <div class="pay">
+        <h1 style="font-size: 48px; margin: 20px 0px 32px;">Interesting Reads!</h1>
+        <div style="display: flex; flex-direction: row; margin: 8px; justify-content: space-between;">
+            <div><h5>New articles</h5></div>
+            <div><a href="http://"><H5>View All</H5></a> </div>
+        </div>
+        <section class="  col-12 "
+            style="gap: 10px; display: flex; flex-direction: row; position: relative; justify-items: center;justify-content: space-between; ">
+    
+            <div class="card-itm" style="border-radius: 10px ; border: 1px solid gray; text-align: center;width: 30.33%;">
+                <img class="card-img" src="./img/11.jpg" style="width: 100%; position: relative;" alt="">
+                <div class="card-body" style="padding: 40px 5px;">
+                    <h2 style="font-size: 22px; white-space: nowrap; overflow: hidden; margin: 20px 8px;">Why book your car parking spot online?</h2>
+                        <p style="text-align: left;">Online car parking can be a game-changer for anyone planning a trip, whether it's for </p>
+                        <a href="http://" style="text-align: left; color: red;"><p>Read More >>></p></a>
+    
+                </div>
+            </div>
+    
+            <div class="card-itm" style="border-radius: 10px ; border: 1px solid gray; text-align: center;width: 30.33%;">
+                <img class="card-img" src="./img/12.jpeg" style="width: 100%; position: relative;" alt="">
+            <div class="card-body" style="padding: 40px 5px;">
+                <h2 style="font-size: 22px; white-space: nowrap; overflow: hidden; margin: 20px 8px;">How Parking Apps Outshine Traditional Street Parking</h2>
+                <!-- <p style="text-align: left;">Online car parking can be a game-changer for anyone planning a trip, whether it's for
+                </p> -->
+                <a href="http://" style="text-align: left; color: red; font-size: 16px;">
+                    <p style="font-size: 16px;">Read More >>></p>
+                </a>
+            
+            </div>
+            </div>
+    
+            <div class="card-itm" style="border-radius: 10px ;border: 1px solid gray; text-align: center;width: 30.33%;">
+                <img class="card-img" src="./img/13.jpg" style="width: 100%; position: relative;" alt="">
+            <div class="card-body" style="padding: 40px 5px;">
+                <h2 style="font-size: 22px; white-space: nowrap; overflow: hidden; margin: 20px 8px;">From Manual to Digital: The Inevitable Shift of the Parking Industry</h2>
+              
+                <a href="http://" style="text-align: left; color: red;">
+                    <p>Read More >>></p>
+                </a>
+            
+            </div>
+            </div>
+    
+    
+        </section>
+    
+    </div>
+
+
+
+<div class="become">
+    <!-- <img src="./img/partner.png" style="width: 100%; position: relative;" alt=""> -->
+    <div style="display: flex;flex-direction: column; justify-content: center; align-items: center;">
+        <h1 style="font-size: 64px;">Partner With Spot Finder</h1>
+        <h1 style="font-size: 24px; margin-bottom: 40px;">Grow your business by listing your service with us.</h1>
+        <button class="btn btn-success nav-item "
+            style="margin: 24px 0px 0px ;padding: 16px 24px; cursor: pointer; background-color: #E23744; border-radius: 30px; border: none; width: 247px; height: 76px;"
+            type="submit">Become a Partner</button>
+    </div>
+</div>
+
+<div class="suscribe">
+    <div style="justify-content: center; text-align: center; padding: 24px; align-items: center;">
+        <h6 style="font-size: 30px; font-weight:bolder;">SUBSCRIBE</h6>
+        <p style="font-size: 16px; margin:12px 0px;">Subscribe to our Spot finder & stay Updated</p>
+        <div style="width: 100%; justify-content: flex-start;">
+        <input type="email" name="" placeholder="Enter Your Email" id="" style="height: 60px; width: 25%; border-radius:10px 0px 0px 10px ; padding: 0px 10px   ;"><button class="subscribe-btn" ><span style="color: white;"> Subscribe</span></button>
+        </div>
+    </div>
+</div>    
+
+
+</div>
+
+<div class="footer">
+        <div class="ftr-itm">
+            <div >
+                <h4 class="ftr-p">About US</h4>
+                <p class="pra" style="white-space: nowrap;">As Travelers and preplanners on a trip, <br> we hate not being able to find <br> parking on a reliable site. <br> We decided to solve
+                this by starting in house!</p>
+            </div>
+        </div>
+
+        <div class="ftr-itm">
+            <div>
+                <h4 class="ftr-p">About US</h4>
+                <p class="pra"><span class="spn">Privacy Policy</span><br>
+                <span class="spn">Cancellation Policy</span><br>
+                 <span class="spn">Terms and Conditions</span></p>
+            </div>
+        </div>
+
+        <div class="ftr-itm">
+            <div>
+                <h4 class="ftr-p">About US</h4>
+                <p class="pra"><span class="spn"><i class="fa-regular fa-envelope" style="margin-right: 5px;"></i>contact@spotfinder.app</span><br>
+                    <span class="spn"><i class="fa-solid fa-phone" style="margin-right: 5px;"></i> 833-799-7770</span><br>
+                    <span class="spn"><i class="fa-solid fa-location-dot" style="max-height: 5px ;"></i> Fort Lauderdale, Florida</span>
+                     <span class="spn"><i class="fa-solid fa-headphones" style="margin-right: 5px;"></i> Contact Support</span></p>
+                </p>    
+            </div>
+        </div>
+
+        <div class="ftr-itm">
+            <div style="margin-left: 10px;">
+                <h4 class="ftr-p">About US</h4>
+                <h4 class="ftr-p">Social</h4>
+                <p class="pra" style="white-space: nowrap; color: #E23744; font-size: 30px;">
+                    
+                    <span><i class="fa-brands fa-facebook"></i></span>
+                <span><i class="fa-brands fa-twitter"></i></span>
+                <span><i class="fa-brands fa-instagram"></i></span>
+                <span><i class="fa-brands fa-tiktok"></i></span>
+                </p>
+            </div>
+        </div>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
